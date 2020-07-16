@@ -42,10 +42,10 @@ public class OrderDetails {
 	private float total;
 	
 	@Column(name = "Order_Status")
-	private Integer status;
+	private String status;
 	
 	@Column(name = "Payment_Method")
-	private Integer payment;
+	private String payment;
 	@ManyToOne
 	private CustomerDetails customer;
 	
@@ -82,7 +82,7 @@ public class OrderDetails {
 	}
 
 	public OrderDetails(Integer orderId, 
-			 Integer qty, float subtotal, float total, Integer status, Integer payment) {
+			 Integer qty, float subtotal, float total, String status, String payment) {
 		super();
 		OrderId = orderId;
 		this.qty = qty;
@@ -124,19 +124,19 @@ public class OrderDetails {
 		this.total = total;
 	}
 
-	public Integer getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(Integer status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public Integer getPayment() {
+	public String getPayment() {
 		return payment;
 	}
 
-	public void setPayment(Integer payment) {
+	public void setPayment(String payment) {
 		this.payment = payment;
 	}
 	
