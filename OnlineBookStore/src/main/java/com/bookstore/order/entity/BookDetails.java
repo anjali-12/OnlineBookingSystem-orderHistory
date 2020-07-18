@@ -6,9 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,24 +25,29 @@ private Integer BookId;
 
 
 @Column(name = "Title")
+@NotEmpty(message = "Title is mandatory")
 private String Title;
 
 
 @Column(name = "Author")
+@NotEmpty(message = "Author is mandatory")
 private String Author;
 
 
 @Column(name = "Description")
+@NotEmpty(message = "Description is mandatory")
 private String Description;
 
 
 @Column(name = "ISBN")
+@NotEmpty(message = "ISBN is mandatory")
 private String ISBN;
 
 @Column(name = "Image")
 private String img;
 
 @Column(name = "Price")
+@NotEmpty(message = "Price is mandatory")
 private float Price;
 
 @Column(name = "Publish_Date")

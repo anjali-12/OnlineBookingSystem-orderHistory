@@ -9,6 +9,7 @@ import com.bookstore.order.entity.BookDetails;
 
 
 	public interface BookDetailsDao extends JpaRepository<BookDetails, Integer> {
+		
 	   
 	}
 

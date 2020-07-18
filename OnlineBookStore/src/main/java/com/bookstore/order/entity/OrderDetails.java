@@ -12,9 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.springframework.format.annotation.DateTimeFormat;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -28,18 +26,23 @@ public class OrderDetails {
 	private Integer OrderId;
 	
 	@Column(name = "Quantity")
+	@NotEmpty(message = "Quantity is mandatory")
 	private Integer qty;
 	
 	@Column(name = "SubTotal")
+	@NotEmpty(message = "SubTotal is mandatory")
 	private float subtotal;
 	
 	@Column(name = "Total")
+	@NotEmpty(message = "Total is mandatory")
 	private float total;
 	
 	@Column(name = "Order_Status")
+	@NotEmpty(message = "OrderStatus is mandatory")
 	private String status;
 	
 	@Column(name = "Payment_Method")
+	@NotEmpty(message = "Payment Method is mandatory")
 	private String payment;
 	@ManyToOne
 	private CustomerDetails customer;
