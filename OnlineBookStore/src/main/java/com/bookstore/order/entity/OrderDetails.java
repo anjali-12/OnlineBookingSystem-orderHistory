@@ -23,7 +23,7 @@ public class OrderDetails {
 	@Column(name = "Order_Id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	private Integer OrderId;
+	private Integer orderId;
 	
 	@Column(name = "Quantity")
 	@NotEmpty(message = "Quantity is mandatory")
@@ -82,7 +82,7 @@ public class OrderDetails {
 	public OrderDetails(Integer orderId, 
 			 Integer qty, float subtotal, float total, String status, String payment) {
 		super();
-		OrderId = orderId;
+		this.orderId = orderId;
 		this.qty = qty;
 		this.subtotal = subtotal;
 		this.total = total;
@@ -91,11 +91,11 @@ public class OrderDetails {
 	}
 
 	public Integer getOrderId() {
-		return OrderId;
+		return orderId;
 	}
 
 	public void setOrderId(Integer orderId) {
-		OrderId = orderId;
+		this.orderId = orderId;
 	}
 
 	public Integer getQty() {

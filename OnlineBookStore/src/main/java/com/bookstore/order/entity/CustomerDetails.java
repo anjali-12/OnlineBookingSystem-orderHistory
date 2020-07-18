@@ -1,62 +1,92 @@
 package com.bookstore.order.entity;
 
 
-import java.util.List;
 
-import javax.persistence.CascadeType;
+
+
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
+/*************************************************************
+ * @author        Anjali Sharma
+ * Description    It is an entity class of customerDetails
+ * Version        1.0
+ * Created Date   16-JULY-2020 
+ *************************************************************/
 @Entity
 @Table(name ="Customer_Table")
 public class CustomerDetails
 {
+/**
+*  It is a primary key of entity table cutomer details
+**/
 @Id
 @Column(name = "Cust_Id")
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Integer custId;
 
+/**
+*  It specifies the name of the customer
+**/
 @NotEmpty(message = "Name is mandatory")
 @Column(name = "CustFullName")
-private String CustFullName;
-
+private String custFullName;
+/**
+*  It specifies the email of the customer
+**/
 @NotEmpty(message = "emailid is mandatory")
 @Email(message = "Email is mandatory")
 @Column(name = "emailId")
 private String emailId;
+/**
+*  It specifies the password of the customer
+**/
 
 @NotEmpty(message = "user password is mandatory")
 @Column(name = "userPaswword")
 private String userPassword;
+/**
+*  It specifies the phone number of the customer
+**/
 
 @NotNull(message = "phoneNo must be mandatory")
 @Column(name = "phoneNo")
 private String phoneNo;
-
+/**
+*  It specifies the address of the customer
+**/
 @NotEmpty(message = "Address is mandatory")
 @Column(name="Address")
-private String Address;
+private String address;
+/**
+*  It specifies the city of the customer
+**/
 
 @NotEmpty(message = "City is mandatory")
 @Column(name="CityName")
-private String CityName;
+private String cityName;
 
+/**
+*  It specifies the zip code of the customer
+**/
 @NotEmpty(message = "ZipCode is mandatory")
 @Column(name="ZipCode")
-private String ZipCode;
+private String zipCode;
 
+/**
+*  It specifies the country of the customer
+**/
 @NotEmpty(message = "Country is mandatory")
 @Column(name="CountryName")
-private String CountryName;
+private String countryName;
 
 public Integer getCustId() {
 	return custId;
@@ -67,11 +97,11 @@ public void setCustId(Integer custId) {
 }
 
 public String getCustFullName() {
-	return CustFullName;
+	return custFullName;
 }
 
 public void setCustFullName(String custFullName) {
-	CustFullName = custFullName;
+	this.custFullName = custFullName;
 }
 
 public String getEmailId() {
@@ -99,58 +129,64 @@ public void setPhoneNo(String phoneNo) {
 }
 
 public String getAddress() {
-	return Address;
+	return address;
 }
 
 public void setAddress(String address) {
-	Address = address;
+	this.address = address;
 }
 
 public String getCityName() {
-	return CityName;
+	return cityName;
 }
 
 public void setCityName(String cityName) {
-	CityName = cityName;
+	this.cityName = cityName;
 }
 
 public String getZipCode() {
-	return ZipCode;
+	return zipCode;
 }
 
 public void setZipCode(String zipCode) {
-	ZipCode = zipCode;
+	this.zipCode = zipCode;
 }
 
 public String getCountryName() {
-	return CountryName;
+	return countryName;
 }
 
 public void setCountryName(String countryName) {
-	CountryName = countryName;
+	this.countryName = countryName;
 }
-
+/**
+*  It specifies the default consructor of the customer details
+**/
 public CustomerDetails() {
 	
 }
-public CustomerDetails(Integer custId, @NotEmpty(message = "Name is mandatory") String custFullName,
-		@NotEmpty(message = "emailid is mandatory") @Email(message = "Email is mandatory") String emailId,
-		@NotEmpty(message = "user password is mandatory") String userPassword,
-		@NotNull(message = "phoneNo must be mandatory") String phoneNo,
-		@NotEmpty(message = "Address is mandatory") String address,
-		@NotEmpty(message = "City is mandatory") String cityName,
-		@NotEmpty(message = "ZipCode is mandatory") String zipCode,
-		@NotEmpty(message = "Country is mandatory") String countryName) {
+/*************************************************************
+ * @author        Anjali Sharma
+ * Description    It is an constructor of cusomerDetails
+ *************************************************************/
+public CustomerDetails(final Integer custId, @NotEmpty(message = "Name is mandatory")final String custFullName,
+		@NotEmpty(message = "emailid is mandatory") @Email(message = "Email is mandatory") final String emailId,
+		@NotEmpty(message = "user password is mandatory")final String userPassword,
+		@NotNull(message = "phoneNo must be mandatory")final String phoneNo,
+		@NotEmpty(message = "Address is mandatory")final String address,
+		@NotEmpty(message = "City is mandatory")final String cityName,
+		@NotEmpty(message = "ZipCode is mandatory")final String zipCode,
+		@NotEmpty(message = "Country is mandatory")final String countryName) {
 	super();
 	this.custId = custId;
-	CustFullName = custFullName;
+	this.custFullName = custFullName;
 	this.emailId = emailId;
 	this.userPassword = userPassword;
 	this.phoneNo = phoneNo;
-	Address = address;
-	CityName = cityName;
-	ZipCode = zipCode;
-	CountryName = countryName;
+	this.address = address;
+	this.cityName = cityName;
+	this.zipCode = zipCode;
+	this.countryName = countryName;
 }
 
 

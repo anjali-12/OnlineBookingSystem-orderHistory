@@ -24,16 +24,16 @@ class OrderServiceTest {
 
 	@Test
 	void test() {
-		OrderDetails ticket = new OrderDetails();
-		ticket.setOrderId(1);
-		ticket.setQty(5);
-		ticket.setSubtotal(500);
-		ticket.setTotal(550);
-		ticket.setStatus("ordered");
-		ticket.setPayment("COD");
-Mockito.when(ticketBookingDao.save(ticket)).thenReturn(ticket);
-	    
-	    assertThat(ticketBookingService.getOrderHistory()).isEqualTo(ticket);
+		OrderDetails order = new OrderDetails();
+		order.setOrderId(1);
+		order.setQty(5);
+		order.setSubtotal(500);
+		order.setTotal(550);
+		order.setStatus("ordered");
+		order.setPayment("COD");
+Mockito.when(ticketBookingDao.save(order)).thenReturn(order);
+
+	    assertThat(ticketBookingService.getOrderHistory()).isEqualTo(order);
 	
 	}
 	
